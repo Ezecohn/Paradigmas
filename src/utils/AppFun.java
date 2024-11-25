@@ -9,6 +9,13 @@ import java.util.List;
 import feed.Article;
 import feed.FeedParser;
 import namedEntities.NamedEntity;
+import namedEntities.heuristics.CapitalizedWordHeuristic;
+import namedEntities.heuristics.QuotedPhraseHeuristic;
+import namedEntities.heuristics.CapitalizedExcludeWordsHeuristic;
+import namedEntities.heuristics.TwoToFiveInitialsHeuristic;
+import namedEntities.heuristics.Heuristic;
+
+
 public class AppFun {
     public static void parserFeed(FeedsData feedsData, List<Article> allArticles) {
         try {
@@ -52,15 +59,24 @@ public class AppFun {
 
     public static void heuristic(String heuristicName, Article article) { 
         try {
-            if (heuristicName.equals("Capital")) {
-                article.applyHeuristicCapitalize();
-            } else if (heuristicName.equals("Quote")) {
-                article.applyHeuristicQuotedPhrase();
-            } else if (heuristicName.equals("CapitalExclude")) {
-                article.applyHeuristicCapitalizeExclude();
-            } else if (heuristicName.equals("Initials")) {
-                article.applyHeuristicTwoToFiveInitials();
+            Heuristic heuristic;
+            switch (heuristicName) {
+                case "Capital":
+                    heuristic = new CapitalizedWordHeuristic();
+                    break;
+                case "Quote":
+                    heuristic = new QuotedPhraseHeuristic();
+                    break;
+                case "CapitalExclude":
+                    heuristic = new CapitalizedExcludeWordsHeuristic ();
+                    break;
+                case "Initials":
+                    heuristic = new TwoToFiveInitialsHeuristic();
+                    break;
+                default:
+                    throw new IllegalArgumentException("Unknown heuristic: " + heuristicName);
             }
+            article.applyHeuristic(heuristic);
         } catch (IOException e) {
             e.printStackTrace(); // Skip this article and move to the next one
         }

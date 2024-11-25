@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class TwoToFiveInitialsHeuristic {
+public class TwoToFiveInitialsHeuristic implements Heuristic{
 
+    @Override
     public List<String> extractCandidates(String text) {
         List<String> candidates = new ArrayList<>();
 

@@ -5,7 +5,7 @@ import java.util.List;
 public abstract class NamedEntity {
 
   private Category category;
-  private List<String> topics; //Topic
+  private List<String> topics; 
   private List<String> atributes;
 
   public NamedEntity(Category category, List<String> topics, List<String> atributes) {
@@ -44,8 +44,6 @@ class Person extends NamedEntity {
     public String getName() {
         return name;
     }
-
-  // getters and setters for name
 }
 
 class Location extends NamedEntity {
@@ -60,7 +58,6 @@ class Location extends NamedEntity {
     public String getName() {
         return location;
     }
-  // getters and setters for location
 }
 
 class Organization extends NamedEntity {
@@ -74,7 +71,6 @@ class Organization extends NamedEntity {
     public String getName() {
         return organizationName;
     }
-  // getters and setters for organizationName
 }
 
 
@@ -90,7 +86,6 @@ class Other extends NamedEntity {
     public String getName() {
         return otherDetail;
     }
-  // getters and setters for otherDetail
 }
 
 class Event extends NamedEntity {
@@ -105,6 +100,4 @@ class Event extends NamedEntity {
     public String getName() {
         return name;
     }
-
-  // getters and setters for name
 }

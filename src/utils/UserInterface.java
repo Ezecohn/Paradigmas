@@ -52,6 +52,11 @@ public class UserInterface {
         Boolean computeNamedEntities = optionDict.containsKey("-ne");
         String feedKey = optionDict.get("-f");
 
+        // Si no se especifica -ne, activar -pf
+        if (!computeNamedEntities) {
+            printFeed = true;
+        }
+
         // Crear la configuración y asignar statsFormat por separado si es necesario
         Config config = new Config(printFeed, computeNamedEntities, feedKey);
 
@@ -59,6 +64,8 @@ public class UserInterface {
         String statsFormat = optionDict.get("-sf");
         if (statsFormat != null) {
             config.setStatsFormat(statsFormat);
+        } else if (computeNamedEntities) {
+            config.setStatsFormat("cat"); // Valor por defecto para -sf si -ne está presente
         }
 
         return config;

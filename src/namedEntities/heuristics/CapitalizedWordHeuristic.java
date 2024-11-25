@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class CapitalizedWordHeuristic {
+public class CapitalizedWordHeuristic implements Heuristic{
 
+    @Override
     public List<String> extractCandidates(String text) {
         List<String> candidates = new ArrayList<>();
 

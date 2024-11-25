@@ -11,7 +11,6 @@ import java.net.URL;
 import java.util.List;
 import java.util.ArrayList;
 
-//
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import org.w3c.dom.Document;
@@ -42,6 +41,10 @@ public class FeedParser {
     
                 Node titleNode = eElement.getElementsByTagName("title").item(0);
                 String title = titleNode != null ? titleNode.getTextContent() : "";
+
+                Node descriptionNode = eElement.getElementsByTagName("description").item(0);
+                String description = descriptionNode != null ? descriptionNode.getTextContent() : "";
+
     
                 Node pubDateNode = eElement.getElementsByTagName("pubDate").item(0);
                 String pubDate = pubDateNode != null ? pubDateNode.getTextContent() : "";
@@ -49,7 +52,7 @@ public class FeedParser {
                 Node linkNode = eElement.getElementsByTagName("link").item(0);
                 String link = linkNode != null ? linkNode.getTextContent() : "";
     
-                Article article = new Article(title, "", pubDate, link);
+                Article article = new Article(title, description, pubDate, link);
                 articles.add(article);
             }
         } catch (Exception e) {
@@ -66,10 +69,9 @@ public class FeedParser {
 
         connection.setRequestMethod("GET");
         connection.setRequestProperty("Content-Type", "application/json");
-        
-        // TODO: Cambiar el user-agent al nombre de su grupo. 
-        // Si todos los grupos usan el mismo user-agent, el servidor puede bloquear las solicitudes.
-        connection.setRequestProperty("User-agent", "queso");
+
+
+        connection.setRequestProperty("User-agent", "Eze");
         connection.setConnectTimeout(5000);
         connection.setReadTimeout(5000);
 
