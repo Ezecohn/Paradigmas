@@ -1,0 +1,26 @@
+// Source code is decompiled from a .class file using FernFlower decompiler.
+package utils;
+
+public class Config {
+   private boolean printFeed = false;
+   private boolean computeNamedEntities = false;
+   private String feedKey;
+
+   public Config(boolean var1, boolean var2, String var3) {
+      this.printFeed = var1;
+      this.computeNamedEntities = var2;
+      this.feedKey = var3;
+   }
+
+   public boolean getPrintFeed() {
+      return this.printFeed;
+   }
+
+   public boolean getComputeNamedEntities() {
+      return this.computeNamedEntities;
+   }
+
+   public String getFeedKey() {
+      return this.feedKey;
+   }
+}
