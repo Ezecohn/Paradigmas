@@ -39,7 +39,6 @@ public class NamedEntityClassifier {
             }
         }
 
-        // No match found, return null or a default NamedEntity
         return new Other(candidate, Category.OTHER, Collections.singletonList("OTHER"), Collections.singletonList("Other"));
     }
 

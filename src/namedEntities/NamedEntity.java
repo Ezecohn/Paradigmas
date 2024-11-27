@@ -30,7 +30,6 @@ public abstract class NamedEntity {
 
 }
 
-//class Person extends Category {
 
 class Person extends NamedEntity {
   private String name;
