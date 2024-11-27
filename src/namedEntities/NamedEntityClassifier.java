@@ -11,8 +11,8 @@ public class NamedEntityClassifier {
 
     public NamedEntityClassifier(String dictionaryJson) {
         this.dictionary = new JSONArray(dictionaryJson);
-    }Pattern pattern = Pattern.compile("\"([^\"]+)\"");
-
+    }
+    
     public NamedEntity classify(String candidate) {
         for (int i = 0; i < dictionary.length(); i++) {
             JSONObject entry = dictionary.getJSONObject(i);
