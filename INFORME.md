@@ -41,7 +41,7 @@ Pueden usar esta checklist para indicar el avance.
 - [x] Revisar TODOs
 
 # 2. Experiencia
-En este proyecto de Java, creé un clasificador de entidades usando un diccionario en formato JSON y expresiones regulares para identificar categorías como personas, lugares, organizaciones y eventos. También me encargué de convertir los datos JSON a listas y de clasificar las palabras clave de acuerdo a su categoría.
+En este proyecto de Java, creé un clasificador de entidades usando un diccionario en formato JSON provisto por la catedra, y utilicé expresiones regulares para identificar categorías como personas, lugares, organizaciones y eventos. Modularicé el codigo siguiendo las practicas del POO.
 
 # 3. Preguntas
 1. Explicar brevemente la estructura de datos elegida para las entidades nombradas.

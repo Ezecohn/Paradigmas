@@ -7,14 +7,12 @@ public class Config {
     private String statsFormat = "cat"; // Valor por defecto
     private String heuristicName = "Capital"; // Valor por defecto para heurística
 
-    // Constructor actualizado para aceptar statsFormat y heuristicName
     public Config(boolean printFeed, boolean computeNamedEntities, String feedKey) {
         this.printFeed = printFeed;
         this.computeNamedEntities = computeNamedEntities;
         this.feedKey = feedKey;
     }
 
-    // Métodos de acceso (getters y setters)
     public boolean getPrintFeed() {
         return printFeed;
     }

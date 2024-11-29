@@ -78,7 +78,7 @@ public class AppFun {
             }
             article.applyHeuristic(heuristic);
         } catch (IOException e) {
-            e.printStackTrace(); // Skip this article and move to the next one
+            e.printStackTrace(); 
         }
     }
 
